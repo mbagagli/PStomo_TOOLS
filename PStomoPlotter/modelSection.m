@@ -120,7 +120,7 @@ elseif isequal(Args.PlotFunct,@pcolor)
     set(gca,'XAxisLocation','top');
     if Args.Coverage
         set(plotHandle,'alphadata',ALPHA', ...
-            'facealpha','flat','edgecolor','none');
+            'facealpha','interp','edgecolor','none'); % if pcolor,'facealpha' MUST be interp
     end
 elseif isequal(Args.PlotFunct,@contourf)
     if Args.Coverage

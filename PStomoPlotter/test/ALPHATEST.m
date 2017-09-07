@@ -26,7 +26,7 @@ freezeColors
 hold on;
 cptcmap('GMT_seis.cpt','mapping','direct','ncol',200);
 hplt=pcolor(DATA');axis ij image tight;caxis([3 6]);shading interp
-set(hplt,'alphadata',ALPHA','facealpha','flat','edgecolor','none');
+set(hplt,'alphadata',ALPHA','facealpha','interp','edgecolor','none');
 colorbar
 
 % 1)plottare la maschera

@@ -61,7 +61,7 @@ end
 if Args.Coverage
     if ~isempty(Args.CoverageMod)
         covMod=modPStomo2mat(Args.CoverageMod,Args.nx,Args.ny,Args.nz);
-        covModSlice=zeros(Args.nx,Args.nz);
+        covModSlice=zeros(Args.nx,Args.ny);
         for i=1:Args.nx
             for k=1:Args.ny
                 covModSlice(i,k)=covMod(i,k,n_slice);
@@ -112,7 +112,7 @@ elseif isequal(Args.PlotFunct,@pcolor)
     set(gca,'XAxisLocation','bottom');
     if Args.Coverage
         set(plotHandle,'alphadata',ALPHA', ...
-            'facealpha','flat','edgecolor','none');
+            'facealpha','interp','edgecolor','none');  % if pcolor,'facealpha' MUST be interp
     end
     
 elseif isequal(Args.PlotFunct,@contourf)
