@@ -1,0 +1,12 @@
+    date    origin      lat      long    depth    mag no d1 gap d  rms    avwt   se
+ 20130103  057 39.77 43n 8.36  11e 0.09   6.66        11  3 139 1 0.2853  1.00  0.05
+                     43.1393   11.0015
+    seh  sez q sqd  adj in nr   avr  aar nm avxm mdxm sdxm nf avfm mdfm sdfm   vpvs
+    0.2  0.4 c b c 0.05 10  1 .0045 .243  0            0.0  0            0.0  2.127
+
+                      -- travel times and delays --
+  stn c pha remk p p-sec s-sec resid  std-er   dist  azm ain    tc c vthk  ttob-ttcal-dlay-edly=resid rmk stn pha sources
+ 005 z     IPU0 c 42.87       -0.21    0.05   14.8   58 100       1       3.10  3.31           -0.21    005            
+ 015 z     IPD0 d 43.85        0.19    0.05   18.0  245  96       1       4.08  3.90            0.19    015            
+ 015 z s   ISU0        46.51  -0.27    0.05              96       1       6.74  7.01           -0.27    015 s  
+
