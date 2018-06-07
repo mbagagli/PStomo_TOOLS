@@ -182,8 +182,12 @@ function hout = getCDataHandles(h)
 %   for example, scattergroups are non-standard hggroups, with CData. Changing
 %   such a group's CData automatically changes the CData of its children, 
 %   (as well as the children's handles), so there's no need to act on them.
-
-error(nargchk(1,1,nargin,'struct'))
+VER=version;
+if str2double(VER(1:3)) >= 9.0;
+    narginchk(1,1) %MB PStomoPlotter
+else
+    error(nargchk(1,1,nargin,'struct')) %original
+end
 
 hout = [];
 if isempty(h),return;end
@@ -206,8 +210,13 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function hAx = getParentAxes(h)
 % getParentAxes  Return enclosing axes of a given object (could be self)
+VER=version;
+if str2double(VER(1:3)) >= 9.0;
+    narginchk(1,1) %MB PStomoPlotter
+else
+    error(nargchk(1,1,nargin,'struct')) %original
+end
 
-error(nargchk(1,1,nargin,'struct'))
 %object itself may be an axis
 if strcmp(get(h,'type'),'axes'),
     hAx = h;
@@ -230,7 +239,13 @@ function [h, nancolor] = checkArgs(args)
 % checkArgs  Validate input arguments to freezeColors
 
 nargs = length(args);
-error(nargchk(0,3,nargs,'struct'))
+%error(nargchk(0,3,nargs,'struct')) %original
+if nargs>3;  %MB PSTtomoPlotter
+    nargs
+    error('JRI:freezeColors:checkArgs:invalidHandle',...
+            'Too many argouments to unpack! check input (MB)')
+end
+
 
 %grab handle from first argument if we have an odd number of arguments
 if mod(nargs,2),

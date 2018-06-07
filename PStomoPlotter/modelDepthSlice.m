@@ -90,7 +90,9 @@ if isequal(Args.PlotFunct,@imagesc)
         freezeColors
         hold on
     end    
-    cptcmap(Args.ColorMap,'mapping','direct','ncol',200);
+%     cptcmap(Args.ColorMap,'mapping','direct','ncol',200);
+    axnow=gca;
+    cptcmap(Args.ColorMap,axnow,'mapping','direct','ncol',200);  %new --> r2014b allows for multiple colormap
     plotHandle=imagesc(axes_x,axes_y,outSlice');
     caxis(Args.Clim);
     axis xy tight image;
@@ -104,7 +106,9 @@ elseif isequal(Args.PlotFunct,@pcolor)
         freezeColors
         hold on
     end    
-    cptcmap(Args.ColorMap,'mapping','direct','ncol',200);
+%     cptcmap(Args.ColorMap,'mapping','direct','ncol',200);
+    axnow=gca;
+    cptcmap(Args.ColorMap,axnow,'mapping','direct','ncol',200);  %new --> r2014b allows for multiple colormap
     plotHandle=pcolor(axes_x,axes_y,outSlice');
     caxis(Args.Clim);
     axis xy tight image ;

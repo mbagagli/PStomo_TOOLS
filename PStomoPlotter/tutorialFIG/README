@@ -1,0 +1,26 @@
+In this dir are contained the necessary files to use the PStomoPlotter routine.
+The files are generated with the Tutorial_Ex1 explained inthe PStomo user manual.
+
+The result models refers to  Run_02:
+
+m_5 -> Pmodel
+c_5 -> coverage Pmodel
+
+ms_5 -> Smodel
+cs_5 -> coverage Smodel
+
+src_0 -> initial  HYPOCENTER
+src_5 _> relocated HYPOCENTER
+
+ice_stat.in --> station (originally contained in Data01 folder)
+
+Different usage call can be done with:
+1) Vp
+	>> OUTFIG=PStomoPlotter('PlotMode',1,'Navigator',1,'ClimVp',[3.5 6.5],'PlotStations',1,'PlotEQ',1,'Coverage',1,'plotstat',1);
+2) Vp + Vp/Vs
+        >> OUTFIG=PStomoPlotter('PlotMode',5,'Navigator',1,'ClimVp',[3.5 6.5],'ClimVaux',[1.70 1.90],'PlotStations',1,'PlotEQ',1,'Coverage',1,'plotstat',1);
+
+Check the other plot mode by typing  ">> help PStomoPlotter" and the initial function lines for other parameter
+
+
+*** NB: the file "image.pdf" refer to the second example call (Vp+Vp/Vs)

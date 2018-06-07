@@ -148,7 +148,7 @@ if ~(MainArgs.StandAlone)
                 if MainArgs.Navigator
                     VER=version;
                     hold on
-                    if str2num(VER(1:3)) >= 9.0;
+                    if str2double(VER(1:3)) >= 9.0;
                         hline(slice,'r');
                     else
                         hNav = graph2d.constantline(slice, 'Color','r');
@@ -173,7 +173,7 @@ if ~(MainArgs.StandAlone)
                 if MainArgs.Navigator
                     VER=version;
                     hold on
-                    if str2num(VER(1:3)) >= 9.0;
+                    if str2double(VER(1:3)) >= 9.0;
                         hline(section,'r');
                     else
                         hNav = graph2d.constantline(section, 'Color','r');
@@ -194,11 +194,12 @@ if ~(MainArgs.StandAlone)
                     'Stations',stations,'Earthquakes',ipocenters, ...
                     'Coverage',MainArgs.Coverage,'CoverageMod',coverage1Path, ...
                     'ColorMap',mapCell{MainArgs.PlotMode}{1});
-                if any(MainArgs.PlotMode==[5,6]) || MainArgs.Coverage; freezeColors; end
+                % OLD VERSION for multi palette in same figure (obsolete after r2014b) %MB
+                % if any(MainArgs.PlotMode==[5,6]) || MainArgs.Coverage; freezeColors; end
                 if MainArgs.Navigator
                     VER=version;
                     hold on
-                    if str2num(VER(1:3)) >= 9.0;
+                    if str2double(VER(1:3)) >= 9.0;
                         hline(slice,'r');
                     else
                         hNav = graph2d.constantline(slice, 'Color','r');
@@ -220,11 +221,12 @@ if ~(MainArgs.StandAlone)
                     'ColorMap',mapCell{MainArgs.PlotMode}{1});
                 set(hcb1,'Units','Normalized', ...
                     'Position',[.128 .522 .337 .018],'FontSize',8);
-                if any(MainArgs.PlotMode==[5,6]) || MainArgs.Coverage; freezeColors,cbfreeze(hcb1); end
+                % OLD VERSION for multi palette in same figure (obsolete after r2014b) %MB
+                % if any(MainArgs.PlotMode==[5,6]) || MainArgs.Coverage; freezeColors,cbfreeze(hcb1); end
                 if MainArgs.Navigator
                     VER=version;
                     hold on
-                    if str2num(VER(1:3)) >= 9.0;
+                    if str2double(VER(1:3)) >= 9.0;
                         hline(section,'r');
                     else
                         hNav = graph2d.constantline(section, 'Color','r');
@@ -233,7 +235,8 @@ if ~(MainArgs.StandAlone)
                     hold off
                 end               
                 % ---:::---:::---:::---:::---:::---:::---:::---:::---:::---:::---:::---:::
-                cptcmap(mapCell{MainArgs.PlotMode}{2},'mapping','direct','ncol',200);
+                % OLD VERSION for multi palette in same figure (obsolete after r2014b) %MB
+                % cptcmap(mapCell{MainArgs.PlotMode}{2},'mapping','direct','ncol',200);
                 h3=subplot(2,2,2);
                 ax3=get(h3,'position');
                 set(h3,'position',ax3);
@@ -245,11 +248,12 @@ if ~(MainArgs.StandAlone)
                     'Stations',stations,'Earthquakes',ipocenters, ...
                     'Coverage',MainArgs.Coverage,'CoverageMod',coverage2Path, ...
                     'ColorMap',mapCell{MainArgs.PlotMode}{2});
-                if any(MainArgs.PlotMode==[5,6]) || MainArgs.Coverage; freezeColors; end
+                % OLD VERSION for multi palette in same figure (obsolete after r2014b) %MB
+                % if any(MainArgs.PlotMode==[5,6]) || MainArgs.Coverage; freezeColors; end
                 if MainArgs.Navigator
                     VER=version;
                     hold on
-                    if str2num(VER(1:3)) >= 9.0;
+                    if str2double(VER(1:3)) >= 9.0;
                         hline(slice,'r');
                     else
                         hNav = graph2d.constantline(slice, 'Color','r');
@@ -271,11 +275,12 @@ if ~(MainArgs.StandAlone)
                     'ColorMap',mapCell{MainArgs.PlotMode}{2});
                 set(hcb2,'Units','Normalized', ...
                     'Position',[.569 .522 .337 .018],'FontSize',8);
-                if any(MainArgs.PlotMode==[5,6]) || MainArgs.Coverage;freezeColors,cbfreeze(hcb2); end
+                % OLD VERSION for multi palette in same figure (obsolete after r2014b) %MB
+                % if any(MainArgs.PlotMode==[5,6]) || MainArgs.Coverage;freezeColors,cbfreeze(hcb2); end
                 if MainArgs.Navigator
                     VER=version;
                     hold on
-                    if str2num(VER(1:3)) >= 9.0;
+                    if str2double(VER(1:3)) >= 9.0;
                         hline(section,'r');
                     else
                         hNav = graph2d.constantline(section, 'Color','r');
@@ -304,6 +309,12 @@ if ~(MainArgs.StandAlone)
             if MainArgs.PlotEQ; ipocenters=MainArgs.IpoNew; end
         elseif strcmpi(result,'ipo off')
             if MainArgs.PlotEQ; ipocenters=[]; end
+        elseif strcmpi(result,'plot pcolor')
+            MainArgs.PlotFunct=@pcolor;           
+        elseif strcmpi(result,'plot imagesc')
+            MainArgs.PlotFunct=@imagesc;
+        elseif strcmpi(result,'plot contourf')
+            MainArgs.PlotFunct=@contourf; 
         elseif strcmpi(result,'quit')
             break
         else
