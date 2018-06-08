@@ -5,7 +5,7 @@ function [h_x,h_y,h_z,h_t]=reloc_plot(name)
 %   each figure created. Wildcard in the 'name' var can be used
 %
 %   USAGE: [h_x,h_y,h_z,h_t]=RELOC_PLOT(name)
-%   AUTHOR: Matteo Bagagli @ INGV.PI - 04/2016
+   %
 
 %% LOAD
 files = dir(name);
