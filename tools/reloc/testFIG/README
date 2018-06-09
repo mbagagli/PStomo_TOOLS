@@ -1,0 +1,3 @@
+once added to the MATLAB path the parent dir, type
+>> cd './testFig'
+>> reloc_plot(Rel*);

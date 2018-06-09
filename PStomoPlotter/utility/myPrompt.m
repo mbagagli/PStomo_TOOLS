@@ -1,13 +1,27 @@
 function [R] = myPrompt(St,D)
-%% NAVIGATOR: custom single Input Dialogue
+%% MYPROMPT: custom single Input Dialogue
 %   Simple window where user can input a char command.
-%   D = defaults
-%   St= window's name
 %
-%   USAGE:  result=navigator(St,D)
+%   USAGE:  result=MYPROMPT(St,D)
 %   AUTHOR: Matteo Bagagli @ INGV.PI
-%   DATE:   ~
+%   DATE:   03/2014
 %
+
+%    PStomo_TOOLS: plot routines for seismic tomography
+%    Copyright (C) 2018  Matteo Bagagli
+%
+%    This program is free software: you can redistribute it and/or modify
+%    it under the terms of the GNU General Public License as published by
+%    the Free Software Foundation, either version 3 of the License, or
+%    (at your option) any later version.
+%
+%    This program is distributed in the hope that it will be useful,
+%    but WITHOUT ANY WARRANTY; without even the implied warranty of
+%    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%    GNU General Public License for more details.
+%
+%    You should have received a copy of the GNU General Public License
+%    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 %% Built-Widget
 if nargin<2  % Default values if called without args.
