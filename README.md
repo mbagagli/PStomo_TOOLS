@@ -1,7 +1,7 @@
 # PStomo_TOOLS
 Utilities and plotter for the _PStomo_eq_ tomography package developed by Ary Tryggvason (see references)
 
-**VERSION:** 1.5.0
+**VERSION:** 1.1.0
 
 **AUTHOR:**  Matteo Bagagli - <matteo.bagagli@erdw.ethz.ch> - [GitHub](https://github.com/billy4all)
 
