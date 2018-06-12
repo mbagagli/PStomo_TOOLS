@@ -29,7 +29,7 @@ The following packages are redistributed in this submission for an easier and fa
 * `string_toolkits` package 
 * `hline_vline` package (for the _navigator_ line)
 * `cptcmap` package 
-* `freezeColors` package (unused from v1.5 is left only for back-portability)
+* `freezeColors` package (unused from v1.1 is left only for back-portability with older version of Matlab that doesn't allow multiple colormpa in one figure)
 
 --------------------
 
@@ -86,5 +86,7 @@ After this, in MATLAB, run the `reloc_plot.m` function inside the `SAVEPATH` dir
 ```
 --------------------
 ## References
-* Tryggvason, A. (1998). «Seismic Tomography: Inversion for P- and S-wave velocities». PhD. Uppsala University: Department of Earth Sciences.* Tryggvason, A. (2009). PStomo_eq: Computer algorithm for performing LE and controlled source traveltime tomography with simultaneous inversion for P- and S-wave velocity structure, hypocentral parameters or static corrections.USER MANUAL.* Tryggvason, A., S.Th. Rögnval e O.G. Flovenz (2002). «Three-dimensional imaging of the P- and S-wave velocity structure and earthquake locations beneath Southwest Iceland». In: Geophysical Journal International 151, 848–866.
+* Tryggvason, A. (1998). «Seismic Tomography: Inversion for P- and S-wave velocities». PhD. Uppsala University: Department of Earth Sciences.
+* Tryggvason, A. (2009). PStomo_eq: Computer algorithm for performing LE and controlled source traveltime tomography with simultaneous inversion for P- and S-wave velocity structure, hypocentral parameters or static corrections.USER MANUAL.
+* Tryggvason, A., S.Th. Rögnval e O.G. Flovenz (2002). «Three-dimensional imaging of the P- and S-wave velocity structure and earthquake locations beneath Southwest Iceland». In: Geophysical Journal International 151, 848–866.
 * Tryggvason, A., C. Schmelzbach e C. Juhlin (2009). «Traveltime tomographic inversion with simultaneous static corrections — Well worth the effort». In: Geophysics 74.6.
