@@ -29,7 +29,7 @@ The following packages are redistributed in this submission for an easier and fa
 * `string_toolkits` package 
 * `hline_vline` package (for the _navigator_ line)
 * `cptcmap` package 
-* `freezeColors` package (unused from v1.1 is left only for back-portability with older version of Matlab that doesn't allow multiple colormpa in one figure)
+* `freezeColors` package (unused from v1.1 is left only for back-portability with older version of Matlab that doesn't allow multiple colormap in the same figure)
 
 --------------------
 
